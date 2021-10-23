@@ -1,0 +1,10 @@
+<h1><%= @recipe.name %></h1>
+
+<h2>Ingredients</h2>
+<% @recipe.ingredients.each do |ingredient| %>
+    <div><%= link_to ingredient.name, ingredient_path(ingredient) %> - <%= pluralize(ingredient.quantity, 'ounce') %> available</div>
+<% end %>
+<br><br>
+<%= link_to 'Edit', edit_recipe_path %>
+<%= link_to 'Recipes', recipes_path %>
+<%= link_to 'Ingredients', ingredients_path %>
